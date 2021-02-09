@@ -1,20 +1,26 @@
-
+import PostForm from "./components/PostForm";
 import './App.css';
-
+import FetchedPosts from "./components/FetchedPosts";
+import Posts from "./components/Posts";
+import Post from "./components/Post"
 function App() {
   return (
     <div className="container pt-3">
       <div className="row">
       <div className="col">
-        Form
+       <PostForm/>
       </div>
     </div>
       <div className="row">
         <div className="col">
-          Posts
+            <h2>sync posts</h2>
+          <Posts posts = {[1, 2, 3]}/>
         </div>
+
           <div className="col">
-              Fetched posts
+              <h2>async posts</h2>
+
+              <FetchedPosts/>
           </div>
       </div>
 
