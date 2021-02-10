@@ -1,5 +1,4 @@
 import PostForm from "./components/PostForm";
-import './App.css';
 import FetchedPosts from "./components/FetchedPosts";
 import Posts from "./components/Posts";
 import Post from "./components/Post"
@@ -14,13 +13,13 @@ function App() {
       <div className="row">
         <div className="col">
             <h2>sync posts</h2>
-          <Posts posts = {[1, 2, 3]}/>
+          <Posts posts = {[]}/>
         </div>
 
           <div className="col">
               <h2>async posts</h2>
 
-              <FetchedPosts/>
+              <FetchedPosts posts={[]}/>
           </div>
       </div>
 
