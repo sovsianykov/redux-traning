@@ -1,11 +1,17 @@
 import React from "react";
 import Post from "./Post";
 import Posts from "./Posts";
+import {useDispatch,useSelector} from "react-redux";
+import {fetchPosts} from "../redux/actions";
 
-export default ({ posts }) => {
+export default ( ) => {
+    const dispatch = useDispatch()
+   const posts = useSelector(state =>
+       state.posts.fetchedPosts
+   )
     if (!posts.length) {
-        return <button className='btn-success btn'>Download posts</button>
+        return <button  onClick={() => dispatch(fetchPosts())} className='btn-success btn'>Download posts</button>
     }
-    return posts.map(el =><Post post = {el} key = {el}/>)
+    return posts.map(el =><Post post = {el} key = {el.id}/>)
 }
 
